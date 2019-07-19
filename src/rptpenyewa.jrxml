@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5220e785-b825-4b92-871f-e0e400263072">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     penyewa.`kode_penyewa` AS penyewa_kode_penyewa,
+     penyewa.`nama` AS penyewa_nama,
+     penyewa.`alamat` AS penyewa_alamat,
+     penyewa.`no_telp` AS penyewa_no_telp,
+     penyewa.`tanggal_sewa` AS penyewa_tanggal_sewa,
+     penyewa.`jaminan` AS penyewa_jaminan
+FROM
+     `penyewa` penyewa]]>
+	</queryString>
+	<field name="penyewa_kode_penyewa" class="java.lang.String"/>
+	<field name="penyewa_nama" class="java.lang.String"/>
+	<field name="penyewa_alamat" class="java.lang.String"/>
+	<field name="penyewa_no_telp" class="java.lang.String"/>
+	<field name="penyewa_tanggal_sewa" class="java.sql.Date"/>
+	<field name="penyewa_jaminan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="d270e12d-bf84-4bb4-930a-35feadd98544"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[LAPORAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="117" y="46" width="157" height="22" uuid="ccdc886a-329e-4bfc-bdc0-fe4a1686b562"/>
+				<text><![CDATA[DATA PENYEWA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="5a77f269-05ce-459c-9d17-7001df29a385"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="92" height="15" uuid="73e0bbf4-4233-4ea0-ad0f-d6675c6c0b09"/>
+				<text><![CDATA[KODE PENYEWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="92" y="19" width="92" height="15" uuid="fb0a08e3-667f-4bb0-8140-f0ea9e6c8954"/>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="184" y="19" width="92" height="15" uuid="c3b99222-14a4-465f-941e-8c15e5925a11"/>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="19" width="92" height="15" uuid="9d53f73e-bd6f-4f78-8e54-f63521a2c7c9"/>
+				<text><![CDATA[TELP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="368" y="19" width="92" height="15" uuid="e618c51d-a856-4377-afba-06ceb69c752d"/>
+				<text><![CDATA[TANGGAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="460" y="19" width="92" height="15" uuid="edb2b008-069e-4d5d-b251-ad3a47143115"/>
+				<text><![CDATA[penyewa_jaminan]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="615d29d1-3ab4-4868-bb80-81f60998d506"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="92" height="15" uuid="9cd5b383-2db6-4d5e-820d-94fc7c93b713"/>
+				<textFieldExpression><![CDATA[$F{penyewa_kode_penyewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="92" y="0" width="92" height="15" uuid="add87316-c896-4aad-8637-0d3aa6be7236"/>
+				<textFieldExpression><![CDATA[$F{penyewa_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="184" y="0" width="92" height="15" uuid="7ec70e3b-d05e-46b9-b3e2-22d8b06d110c"/>
+				<textFieldExpression><![CDATA[$F{penyewa_alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="276" y="0" width="92" height="15" uuid="9e1dcbf4-6237-4cf2-9b41-bc837a52408c"/>
+				<textFieldExpression><![CDATA[$F{penyewa_no_telp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="368" y="0" width="92" height="15" uuid="3cd1b8d6-09f3-40d1-947b-a01e945e1009"/>
+				<textFieldExpression><![CDATA[$F{penyewa_tanggal_sewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="460" y="0" width="92" height="15" uuid="ab0a9bd5-0af4-4019-b3e1-6e5f10ba18a5"/>
+				<textFieldExpression><![CDATA[$F{penyewa_jaminan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="ebbf4a23-2a36-4c57-92f7-872206f86e05"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="69d757c7-a9f9-491a-93bf-292c5e3bfbc6"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="574a92a2-12f9-43fc-ad72-96298db9af97"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="c1da84a0-2618-4aa5-8d2b-f17a8eaf474a"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
